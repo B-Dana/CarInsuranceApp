@@ -1,0 +1,32 @@
+﻿@using CarInsuranceApp.ViewModels
+@model List<CardriverVm>
+
+<div class="row no-gutters m-3">
+    <div class="card col-sm-12 col-md-10 col-lg-6 mx-auto">
+        <div class="card-header text-center">
+            <h3 class="m-0">Car Driver Information</h3>
+        </div>
+        <div class="card-body">
+            @foreach (var cardriver in Model)
+            {
+                    <input type="hidden" name="Id" value="@cardriver.Id" />
+                    <div class="row mb-3">
+                        <div class="col-2">
+                            @cardriver.FirstName
+                        </div>
+                        <div class="col">
+                            @cardriver.LastName
+                        </div>
+                        <div class="col-4">
+                            @cardriver.EmailAddress
+                        </div>
+                        <div class="col">
+                            @cardriver.FinalQuote
+                        </div>
+                    </div>
+                    <br/>
+            }
+        </div>
+    </div>
+</div>
+
