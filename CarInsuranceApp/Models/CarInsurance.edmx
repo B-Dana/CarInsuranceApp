@@ -20,7 +20,6 @@
           <Property Name="HadDUI" Type="bit" />
           <Property Name="SpeedingTickets" Type="int" />
           <Property Name="FullCoverage" Type="bit" />
-          <Property Name="Liability" Type="bit" />
           <Property Name="FinalQuote" Type="float" />
         </EntityType>
         <EntityContainer Name="CarInsuranceModelStoreContainer">
@@ -45,7 +44,6 @@
           <Property Name="HadDUI" Type="Boolean" />
           <Property Name="SpeedingTickets" Type="Int32" />
           <Property Name="FullCoverage" Type="Boolean" />
-          <Property Name="Liability" Type="Boolean" />
           <Property Name="FinalQuote" Type="Double" />
         </EntityType>
         <EntityContainer Name="CarInsuranceEntities" annotation:LazyLoadingEnabled="true">
@@ -72,7 +70,6 @@
                 <ScalarProperty Name="HadDUI" ColumnName="HadDUI" />
                 <ScalarProperty Name="SpeedingTickets" ColumnName="SpeedingTickets" />
                 <ScalarProperty Name="FullCoverage" ColumnName="FullCoverage" />
-                <ScalarProperty Name="Liability" ColumnName="Liability" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

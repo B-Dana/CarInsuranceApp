@@ -15,7 +15,7 @@ namespace CarInsuranceApp.Controllers
         }
 
         [HttpPost]
-        public ActionResult TotalQuote(string firstName, string lastName, string emailAddress, DateTime dateOfBirth, int carYear, string carMake, string carModel, bool hadDUI, int speedingTickets, bool fullCoverage, bool liability)
+        public ActionResult TotalQuote(string firstName, string lastName, string emailAddress, DateTime dateOfBirth, int carYear, string carMake, string carModel, bool hadDUI, int speedingTickets, bool fullCoverage)
         {
             if (string.IsNullOrEmpty(firstName) || string.IsNullOrEmpty(lastName) || string.IsNullOrEmpty(emailAddress))
             {
@@ -36,18 +36,17 @@ namespace CarInsuranceApp.Controllers
                     driver.HadDUI = hadDUI;
                     driver.SpeedingTickets = speedingTickets;
                     driver.FullCoverage = fullCoverage;
-                    driver.Liability = liability;
 
                     double totalQuote = 50;
-
-                    if ((DateTime.Now).Year - (Convert.ToDateTime(driver.DateOfBirth)).Year < 25)
-                    {
-                        totalQuote += 25;
-                    }
                     if ((DateTime.Now).Year - (Convert.ToDateTime(driver.DateOfBirth)).Year < 18)
                     {
                         totalQuote += 100;
                     }
+                    else if ((DateTime.Now).Year - (Convert.ToDateTime(driver.DateOfBirth)).Year < 25)
+                    {
+                        totalQuote += 25;
+                    }
+                   
                     if ((DateTime.Now).Year - (Convert.ToDateTime(driver.DateOfBirth)).Year > 100)
                     {
                         totalQuote += 25;
